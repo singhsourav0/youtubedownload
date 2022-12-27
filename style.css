@@ -1,0 +1,540 @@
+                        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                            font-family: 'Poppins', sans-serif;
+                            transition: all 0.3s ease;
+                        }
+                        
+                         :root {
+                            --white: #fff;
+                            --black: #24292d;
+                            --nav-main: #4070f4;
+                            --switchers-main: #0b3cc1;
+                            --light-bg: #F0F8FF;
+                        }
+                        
+                        nav {
+                            position: fixed;
+                            height: 70px;
+                            width: 100%;
+                            background: var(--nav-main);
+                            box-shadow: 0 5px 10px rgba(110, 8, 8, 0.1);
+                        }
+                        
+                        nav .navbar {
+                            display: flex;
+                            align-items: center;
+                            word-spacing: 10px;
+                            height: 100%;
+                            max-width: 1700px;
+                            padding: 0 30px;
+                            justify-content: space-between;
+                        }
+                        
+                        nav .navbar a {
+                            font-size: 30px;
+                            font-weight: 500;
+                            color: var(--white);
+                            text-decoration: none;
+                        }
+                        
+                        .navbar .logo {
+                            color: red;
+                            font-size: 30px;
+                            font-weight: 500;
+                            /* color: var(--white); */
+                            /* text-decoration: none; */
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        }
+                        
+                        .navbar .nav-links {
+                            display: flex;
+                        }
+                        
+                        .navbar .nav-links li {
+                            margin: 0 18px;
+                            list-style: none;
+                            display: flex;
+                        }
+                        
+                        .navbar .nav-links a {
+                            font-size: 18px;
+                            font-weight: 400;
+                            opacity: 1;
+                        }
+                        
+                        .navbar .nav-links a:hover {
+                            opacity: 1;
+                        }
+                        
+                        .navbar .appearance {
+                            display: flex;
+                            align-items: center;
+                        }
+                        
+                        .appearance .light-dark,
+                        .appearance .icons {
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 6px;
+                            line-height: 50px;
+                            text-align: center;
+                            color: var(--white);
+                            font-size: 20px;
+                            background: var(--switchers-main);
+                            cursor: pointer;
+                        }
+                        
+                        .appearance .light-dark i,
+                        .appearance .icons i {
+                            opacity: 1;
+                        }
+                        
+                        .appearance .light-dark:hover i,
+                        .appearance .icons:hover i {
+                            opacity: 1;
+                        }
+                        
+                        .appearance .light-dark:hover {
+                            box-shadow: 0 5px 10px rgba(113, 5, 5, 0.1)
+                        }
+                        
+                        .appearance .light-dark i {
+                            height: 100%;
+                            width: 100%;
+                        }
+                        
+                        .appearance .color-icon {
+                            position: relative;
+                        }
+                        
+                        .appearance .icons {
+                            width: 70px;
+                            height: 50px;
+                            margin-left: 14px;
+                        }
+                        
+                        .appearance .color-box {
+                            position: absolute;
+                            bottom: -133px;
+                            right: 0;
+                            min-height: 100px;
+                            background: var(--white);
+                            padding: 16px 20px 20px 20px;
+                            border-radius: 6px;
+                            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                        
+                        .color-box::before {
+                            content: '';
+                            position: absolute;
+                            top: -10px;
+                            right: 20px;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            background: var(--white);
+                            transform: rotate(45deg);
+                        }
+                        
+                        .color-icon.open .color-box {
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
+                        
+                        .color-icon.open .arrow {
+                            transform: rotate(-180deg);
+                        }
+                        
+                        .appearance .color-box h3 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            display: block;
+                            color: var(--nav-main);
+                            text-align: left;
+                            white-space: nowrap;
+                            margin-bottom: 10px;
+                        }
+                        
+                        .appearance .color-box .color-switchers {
+                            display: flex;
+                        }
+                        
+                        .color-box .color-switchers .btn {
+                            display: inline-block;
+                            height: 40px;
+                            width: 40px;
+                            border: none;
+                            outline: none;
+                            border-radius: 50%;
+                            margin: 0 5px;
+                            cursor: pointer;
+                            background: #4070F4;
+                        }
+                        
+                        .color-switchers .btn.blue.active {
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #4070F4;
+                        }
+                        
+                        .color-switchers .btn.orange {
+                            background: #F79F1F;
+                        }
+                        
+                        .color-switchers .btn.orange.active {
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #F79F1F;
+                        }
+                        
+                        .color-switchers .btn.purple {
+                            background: #8e44ad;
+                        }
+                        
+                        .color-switchers .btn.purple.active {
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8e44Ad;
+                        }
+                        
+                        .color-switchers .btn.green {
+                            background: #3A9943;
+                        }
+                        
+                        .color-switchers .btn.green.active {
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #3A9943;
+                        }
+                        
+                        .home-content {
+                            height: 100vh;
+                            width: 100%;
+                            background: var(--light-bg);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 0 30px;
+                            margin: 24px 0 30px 0;
+                        }
+                        
+                        .home-content h2 {
+                            color: var(--black);
+                            font-size: 50px;
+                        }
+                        
+                        .home-content h3 {
+                            color: var(--black);
+                            font-size: 42px;
+                            margin-top: -20px;
+                            margin: -1%;
+                        }
+                        
+                        .home-content h3 span {
+                            color: var(--nav-main);
+                        }
+                        
+                        .home-content h3 span.darkMode {
+                            /* color: var(--black); */
+                            color: red;
+                        }
+                        
+                        .home-content p {
+                            color: var(--black);
+                            font-size: 16px;
+                            width: 45%;
+                            text-align: justify;
+                            margin: 24px 0 30px 0;
+                        }
+                        
+                        .home-content a {
+                            color: #fff;
+                            font-size: 30px;
+                            padding: 12px 24px;
+                            border-radius: 6px;
+                            text-decoration: none;
+                            background: var(--nav-main);
+                        }
+                        
+                        .home-content a i {
+                            transform: rotate(45deg);
+                            font-size: 16px;
+                            color: red;
+                        }
+                        
+                        .home-content a:hover {
+                            background: var(--switchers-main);
+                        }
+                        
+                        @media (max-width: 1050px) {
+                            .home-content p {
+                                width: 70%;
+                            }
+                        }
+                        
+                        .search-box {
+                            position: relative;
+                            display: block;
+                            height: 62px;
+                            width: 86vw;
+                            max-width: 600px;
+                            margin: 3% auto 0 auto;
+                            background-color: #48e1d4;
+                            border-radius: 25px;
+                            border-color: #f1c40f;
+                            /* background: var(--nav-main); */
+                            box-shadow: 0 0 0 1.5px var(--nav-main);
+                        }
+                        
+                        input[id='keyword'] {
+                            background: none;
+                            border: none;
+                            color: rgb(18, 15, 15);
+                            height: 62px;
+                            width: 100%;
+                            margin-left: 1em;
+                            font-size: 16px;
+                        }
+                        
+                        input[class='box'] {
+                            background: transparent;
+                            border: none;
+                            height: 25px;
+                            width: 80%;
+                            border-bottom: 4px solid rgb(180, 46, 46);
+                            font-size: 16px;
+                        }
+                        
+                        input:focus {
+                            outline: #Df3c45;
+                        }
+                        
+                        input[type="submit"].MM {
+                            width: 10%;
+                            padding: 8px 12px;
+                            font-size: 1.2em;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            background: rgb(39, 173, 39);
+                            color: white;
+                            border-radius: 17px;
+                            margin: 0 auto;
+                            margin-top: 15px;
+                            display: block;
+                            width: 50%;
+                            box-shadow: 0 0 0 1px rgb(25, 0, 255);
+                            transition: 300ms;
+                            text-align: calc();
+                        }
+                        
+                        input[type="submit"]:active {
+                            box-shadow: 0 0 0 3px red;
+                            background: #Df3c45;
+                            transform: scale(0.7);
+                        }
+                        /* .from {
+                                position: relative;
+                                display: block;
+                                height: 2px;
+                                width: 50vw;
+                                max-width: 600px;
+                                margin: 3% auto 0 auto;
+                                background-color: #48e1d4;
+                                border-radius: 25px;
+                                border-color: #f1c40f;
+                                background: var(--nav-main);
+                                box-shadow: 0 0 0 1px var(--nav-main); */
+                        /* }  */
+                        
+                        .link,
+                        .format {
+                            width: 20%;
+                            align-items: center;
+                            height: 35px;
+                            border: 4.5px solid var(--nav-main);
+                            margin-top: 15px 10px;
+                            text-align: center;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                        }
+                        
+                        .btn {
+                            width: 10%;
+                            padding: 8px 12px;
+                            font-size: 1.2em;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            background: var(--nav-main);
+                            color: white;
+                            border-radius: 17px;
+                            margin: 0 auto;
+                            margin-top: 15px;
+                            display: block;
+                            width: 50%;
+                            box-shadow: 0 0 0 1px rgb(25, 0, 255);
+                            transition: 300ms;
+                            text-align: calc();
+                        }
+                        
+                        .card {
+                            position: relative;
+                            width: 300px;
+                            margin: auto;
+                            margin-top: 100px;
+                            height: 450px;
+                            /* height: 100%; */
+                            background: #333;
+                            transition: 0.5s;
+                        }
+                        
+                        .card .lines {
+                            position: absolute;
+                            inset: 0;
+                            background: #000;
+                            overflow: hidden;
+                        }
+                        
+                        .card .lines::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 600px;
+                            height: 100px;
+                            background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+                            animation: animate 3s linear infinite;
+                        }
+                        
+                        @keyframes animate {
+                            0% {
+                                transform: translate(-50%, -50%) rotate(0deg)
+                            }
+                            100% {
+                                transform: translate(-50%, -50%) rotate(360deg);
+                            }
+                        }
+                        
+                        .card .lines::after {
+                            content: '';
+                            position: absolute;
+                            inset: 4px;
+                            background: #292929;
+                        }
+                        
+                        .card .imgbx {
+                            position: absolute;
+                            top: -50px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 170px;
+                            height: 170px;
+                            background: #000;
+                            transition: 00.5s;
+                            z-index: 10;
+                            overflow: hidden;
+                        }
+                        
+                        .card:hover .imgbx {
+                            width: 250PX;
+                            height: 250px;
+                        }
+                        
+                        .card .imgbx::before {
+                            content: '';
+                            position: absolute;
+                            height: 150px;
+                            left: 50%;
+                            top: 50%;
+                            width: 400px;
+                            transform: translate(-50%, -50%);
+                            background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+                            animation: animate2 3s linear infinite;
+                        }
+                        
+                        @keyframes animate2 {
+                            0% {
+                                transform: translate(-50%, -50%) rotate(360deg);
+                            }
+                            100% {
+                                transform: translate(-50%, -50%) rotate(0deg);
+                            }
+                        }
+                        
+                        .card .imgbx::after {
+                            content: '';
+                            position: fixed;
+                            inset: 4px;
+                            background: #292929;
+                        }
+                        
+                        .card .imgbx img {
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                            z-index: 1;
+                            width: calc(100% -20px);
+                            height: calc(100% - 20px);
+                        }
+                        
+                        .card .content {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            text-align: center;
+                            justify-content: center;
+                            align-items: flex-end;
+                            overflow: hidden;
+                        }
+                        
+                        .card .content .details {
+                            padding: 10px;
+                            text-align: center;
+                            width: 100%;
+                            transition: 0.5s;
+                        }
+                        
+                        .card:hover .content .details {
+                            transform: translate(0px);
+                        }
+                        
+                        .card .content .details h2 {
+                            font-size: 1.5em;
+                            font-weight: 600;
+                            color: #45f3ff;
+                            line-height: .9em;
+                            text-align: center;
+                            margin-top: 1400px;
+                        }
+                        
+                        .card .content .details h2 span {
+                            font-size: .75em;
+                            font-weight: 500;
+                            color: #fff;
+                        }
+                        
+                        .card .content .details .data {
+                            margin: 2px 0px;
+                        }
+                        
+                        .card .content .details .data {
+                            margin-top: 48px;
+                            transform: translate(0px, 10px);
+                            display: flex;
+                            flex-direction: row;
+                            width: 100%;
+                            justify-content: center;
+                            gap: 5px;
+                        }
+                        
+                        .card .content .details .data h3 {
+                            font-size: 1.2em;
+                            color: #45f3ff;
+                            line-height: 1.7em;
+                            font-weight: 1600;
+                            margin-bottom: 36px;
+                        }
+                        
+                        .card .content .details .data h3 span {
+                            font-size: 0.85em;
+                            font-weight: 400;
+                            color: #a1ba10;
+                        }
